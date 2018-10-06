@@ -1,0 +1,26 @@
+# /etc/conf.d/p2pd: config file for /etc/init.d/p2pd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/p2p/p2p.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/p2pd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/p2pd.pid"
+
+# Where to write p2pd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/p2pd"
+
+# User and group to own p2pd process
+#BITCOIND_USER="p2p"
+#BITCOIND_GROUP="p2p"
+
+# Path to p2pd executable
+#BITCOIND_BIN="/usr/bin/p2pd"
+
+# Nice value to run p2pd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

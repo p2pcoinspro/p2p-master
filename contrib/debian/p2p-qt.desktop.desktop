@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=p2p
+Comment=p2p P2P Cryptocurrency
+Exec=p2p-qt %u
+Terminal=false
+Type=Application
+Icon=p2p128
+MimeType=x-scheme-handler/p2p;
+Categories=Office;Finance;
+Name[en_US]=p2p-qt.desktop

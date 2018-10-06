@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  p2pd The p2p core server.
+#
+#
+# chkconfig: 345 80 20
+# description: p2pd
+# processname: p2pd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/p2pd, see below
+if [ -f /etc/sysconfig/p2pd ]; then
+        . /etc/sysconfig/p2pd
+fi
+
+RETVAL=0
+
+prog=p2pd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/p2pd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/p2pd}
+
+# p2pd defaults to /usr/bin/p2pd, override with BITCOIND_BIN
+bitcoind=${BITCOIND_BIN-/usr/bin/p2pd}
+
+# p2pd opts default to -disablewallet, override with BITCOIND_OPTS
+bitcoind_opts=${BITCOIND_OPTS}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $bitcoind $bitcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

@@ -1,0 +1,26 @@
+[Unit]
+Description=p2p's distributed currency daemon
+After=network.target
+
+[Service]
+User=p2p
+Group=p2p
+
+Type=forking
+PIDFile=/var/lib/p2pd/p2pd.pid
+
+ExecStart=/usr/bin/p2pd -daemon -pid=/var/lib/p2pd/p2pd.pid \
+          -conf=/etc/p2p/p2p.conf -datadir=/var/lib/p2pd
+
+ExecStop=-/usr/bin/p2p-cli -conf=/etc/p2p/p2p.conf \
+         -datadir=/var/lib/p2pd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
