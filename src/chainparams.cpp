@@ -116,7 +116,7 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 1 * 60; // p2p: 1 day
         nTargetSpacing = 1 * 60;  // p2p: 1 minutes
-        nMaturity = 100;
+        nMaturity = 21;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
@@ -125,18 +125,18 @@ public:
         nModifierUpdateBlock = 1; // we use the version 2 for P2P
 
         /**
-        python genesis.py -a quark-hash -z "Matter falling into a black hole at 30 percent of the speed of light" -t 1537509600 -p 0455597268d824684fa29cbd1a17db1ba001a70918a208e6d5a6703fc2d7dc91f6f05b9f22a79f9cbba9d64c3597feb2d488e88cd9595f2196956233b7b63d6996 -v 0
-		04ffff001d0104444d61747465722066616c6c696e6720696e746f206120626c61636b20686f6c652061742033302070657263656e74206f6620746865207370656564206f66206c69676874
-		algorithm: quark-hash
-		merkle hash: 1f1f47c6e4b9f9fdcd8b64748b1a66e0cb1a47f62e793349297e41ea2c37929c
-		pszTimestamp: Matter falling into a black hole at 30 percent of the speed of light
-		pubkey: 0455597268d824684fa29cbd1a17db1ba001a70918a208e6d5a6703fc2d7dc91f6f05b9f22a79f9cbba9d64c3597feb2d488e88cd9595f2196956233b7b63d6996
-		time: 1537509600
-		bits: 0x1e0ffff0
-		Searching for genesis hash..
-		37874.0 hash/s, estimate: 31.5 hgenesis hash found!
-		nonce: 2569199
-		genesis hash: 00000291d02cc6230a9357a6552de601c5d48a76cd49e8a65bd81ed309091983
+	python genesis.py -a quark-hash -z "FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct" -t 1538246463 -p 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9 -v 0
+	04ffff001d01044b4642492072656163686573206f757420746f20326e6420776f6d616e2077686f206861732061636375736564204b6176616e61756768206f662073657875616c206d6973636f6e64756374
+	algorithm: quark-hash
+	merkle hash: e90e5ecc79da4653ef65a89257e26c5732cbd5aa2996399b87eb141b63ecabc4
+	pszTimestamp: FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct
+	pubkey: 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9
+	time: 1538246463
+	bits: 0x1e0ffff0
+	Searching for genesis hash..
+	46483.0 hash/s, estimate: 25.7 hgenesis hash found!
+	nonce: 21716626
+	genesis_hash: 00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8
          */
         const char* pszTimestamp = "FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct";
         CMutableTransaction txNew;
@@ -162,11 +162,11 @@ public:
         vSeeds.push_back(CDNSSeedData("85.121.196.205", "85.121.196.205"));
 
 
-        // p2p addresses start with 'V'
+        // p2p addresses start with 'p'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 55);
-        // p2p script addresses start with 'u'
+        // p2p script addresses start with 'p'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 55 );
-        // p2p private keys start with 'U' or 'V' (?)
+        // p2p private keys start with 'p'  (?)
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 55);
         // p2p BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
@@ -177,11 +177,11 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = false;
+        fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
-        fMineBlocksOnDemand = true;
+        fMineBlocksOnDemand = false;
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
