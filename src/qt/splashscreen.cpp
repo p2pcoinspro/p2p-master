@@ -29,7 +29,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
 
     // set reference point, paddings
     int paddingLeft = 14;
-    int paddingTop = 445;
+    int paddingTop = 400;
     int titleVersionVSpace = 17;
     int titleCopyrightVSpace = 32;
 
@@ -61,7 +61,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
         fontFactor = 0.75;
     }
 
-    pixPaint.setFont(QFont(font, 25 * fontFactor));
+    pixPaint.setFont(QFont(font, 20 * fontFactor));
     fm = pixPaint.fontMetrics();
     //titleTextWidth = fm.width(titleText);
     pixPaint.drawText(paddingLeft, paddingTop, titleText);
