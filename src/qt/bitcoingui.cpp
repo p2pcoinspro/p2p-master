@@ -49,6 +49,7 @@
 #include <QMimeData>
 #include <QProgressBar>
 #include <QProgressDialog>
+#include <QDesktopServices>
 #include <QSettings>
 #include <QStackedWidget>
 #include <QStatusBar>
@@ -414,6 +415,20 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     quitAction->setStatusTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
+// add links in tools
+    webAction = new QAction(QIcon(":/icons/bitcoin"), tr("&P2P Coin Website"), this);
+    webAction->setToolTip(tr("Visit the Official P2P Coin website"));
+
+    PlatformAction = new QAction(QIcon(":/icons/bitcoin"), tr("&P2P Web Platform"), this);
+    PlatformAction->setToolTip(tr("Visit the Official P2P Web Platform"));
+
+    discordAction = new QAction(QIcon(":/icons/bitcoin"), tr("&P2P Discord"), this);
+    discordAction->setToolTip(tr("Join P2P Discord"));
+
+    explorerAction = new QAction(QIcon(":/icons/bitcoin"), tr("&P2P Web Block Explorer"), this);
+    explorerAction->setToolTip(tr("P2P Web Block Explorer"));
+//end add links in tools
+
     aboutAction = new QAction(networkStyle->getAppIcon(), tr("&About p2p Core"), this);
     aboutAction->setStatusTip(tr("Show information about p2p Core"));
     aboutAction->setMenuRole(QAction::AboutRole);
@@ -491,6 +506,12 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
+// add links in tools
+        connect(webAction, SIGNAL(triggered()), this, SLOT(webClicked()));
+        connect(PlatformAction, SIGNAL(triggered()), this, SLOT(PlatformClicked()));
+        connect(discordAction, SIGNAL(triggered()), this, SLOT(discordClicked()));
+        connect(explorerAction, SIGNAL(triggered()), this, SLOT(explorerClicked()));
+//end add links in tools
     connect(aboutQtAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(optionsAction, SIGNAL(triggered()), this, SLOT(optionsClicked()));
     connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
@@ -558,6 +579,11 @@ void BitcoinGUI::createMenuBar()
 
     if (walletFrame) {
         QMenu* tools = appMenuBar->addMenu(tr("&Tools"));
+        tools->addAction(webAction);
+        tools->addAction(PlatformAction);
+        tools->addAction(discordAction);
+        tools->addAction(explorerAction);
+        tools->addSeparator();
         tools->addAction(openInfoAction);
         tools->addAction(openRPCConsoleAction);
         tools->addAction(openNetworkAction);
@@ -751,6 +777,13 @@ void BitcoinGUI::createTrayIconMenu()
     trayIconMenu->addAction(openMNConfEditorAction);
     trayIconMenu->addAction(showBackupsAction);
     trayIconMenu->addAction(openBlockExplorerAction);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(webAction);
+    trayIconMenu->addAction(PlatformAction);
+    trayIconMenu->addAction(discordAction);
+    trayIconMenu->addAction(explorerAction);
+
+
 #ifndef Q_OS_MAC // This is built-in on Mac
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(quitAction);
@@ -785,6 +818,27 @@ void BitcoinGUI::aboutClicked()
     HelpMessageDialog dlg(this, true);
     dlg.exec();
 }
+
+// actions for links in tools
+void BitcoinGUI::webClicked()
+	{
+	    QDesktopServices::openUrl(QUrl("https://crypto.p2p-coins.pro/"));
+	}
+void BitcoinGUI::PlatformClicked()
+	{
+	    QDesktopServices::openUrl(QUrl("https://p2p-coins.pro/"));
+	}
+void BitcoinGUI::discordClicked()
+	{
+	    QDesktopServices::openUrl(QUrl("https://discord.gg/W34TuYc"));
+	}
+void BitcoinGUI::explorerClicked()
+	{
+	    QDesktopServices::openUrl(QUrl("https://explorer.p2p-coins.pro/"));
+	}
+//end actions for links in tools
+
+
 
 void BitcoinGUI::showHelpMessageClicked()
 {

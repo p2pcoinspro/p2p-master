@@ -126,6 +126,10 @@ private:
     QAction* openBlockExplorerAction;
     QAction* showHelpMessageAction;
     QAction* multiSendAction;
+        QAction *webAction;
+        QAction *PlatformAction;
+        QAction *discordAction;
+        QAction *explorerAction;
 
     QSystemTrayIcon* trayIcon;
     QMenu* trayIconMenu;
@@ -230,6 +234,11 @@ private slots:
     void optionsClicked();
     /** Show about dialog */
     void aboutClicked();
+    /**show links in tools*/
+        void webClicked();
+        void PlatformClicked();
+        void discordClicked();
+        void explorerClicked();
     /** Show help message dialog */
     void showHelpMessageClicked();
 #ifndef Q_OS_MAC
