@@ -125,18 +125,19 @@ public:
         nModifierUpdateBlock = 1; // we use the version 2 for P2P
 
         /**
-	python genesis.py -a quark-hash -z "FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct" -t 1538246463 -p 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9 -v 0
+	python genesis.py -a quark-hash -z "FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct" -t 1543178982 -p 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9 -v 0
 	04ffff001d01044b4642492072656163686573206f757420746f20326e6420776f6d616e2077686f206861732061636375736564204b6176616e61756768206f662073657875616c206d6973636f6e64756374
-	algorithm: quark-hash
-	merkle hash: e90e5ecc79da4653ef65a89257e26c5732cbd5aa2996399b87eb141b63ecabc4
-	pszTimestamp: FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct
-	pubkey: 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9
-	time: 1538246463
-	bits: 0x1e0ffff0
-	Searching for genesis hash..
-	46483.0 hash/s, estimate: 25.7 hgenesis hash found!
-	nonce: 21716626
-	genesis_hash: 00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8
+algorithm: quark-hash
+merkle hash: e90e5ecc79da4653ef65a89257e26c5732cbd5aa2996399b87eb141b63ecabc4
+pszTimestamp: FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct
+pubkey: 047d747338e3e06858b077e8c56507d5ef1d6da2eb30966d861ee7efe218a350c4f54872ead5723b4529fb0cb11f51d7ff3289c9ad431d683f425bf15976692ec9
+time: 1543178982
+bits: 0x1e0ffff0
+Searching for genesis hash..
+22398.0 hash/s, estimate: 53.3 hgenesis hash found!
+nonce: 26351457
+genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
+
          */
         const char* pszTimestamp = "FBI reaches out to 2nd woman who has accused Kavanaugh of sexual misconduct";
         CMutableTransaction txNew;
@@ -149,17 +150,21 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1538246463;
+        genesis.nTime = 1543178982;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21716626;
+        genesis.nNonce = 26351457;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8"));
+        assert(hashGenesisBlock == uint256("0x00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c"));
         assert(genesis.hashMerkleRoot == uint256("0xe90e5ecc79da4653ef65a89257e26c5732cbd5aa2996399b87eb141b63ecabc4"));
 
         // DNS Seeding
-        vSeeds.push_back(CDNSSeedData("85.121.196.204", "85.121.196.204"));
-        vSeeds.push_back(CDNSSeedData("85.121.196.205", "85.121.196.205"));
+        vSeeds.push_back(CDNSSeedData("46.101.191.120", "46.101.191.120"));
+        vSeeds.push_back(CDNSSeedData("159.89.23.26", "159.89.23.26"));
+        vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
+        vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
+        vSeeds.push_back(CDNSSeedData("159.89.30.79", "159.89.30.79"));
+        vSeeds.push_back(CDNSSeedData("85.121.197.170", "85.121.197.170"));
 
 
         // p2p addresses start with 'p'
@@ -230,11 +235,11 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1538246464;
-        genesis.nNonce = 21253431;
+        genesis.nTime = 1543178983;
+        genesis.nNonce = 21203930;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000006b786ee9e022948360467e4d6375c7600464f237008dc854a48967eb901"));
+        assert(hashGenesisBlock == uint256("0x00000eac517dfa680f10e1fa4c3c1f9cca2235d4f5213ff7a98e80c79f6a24b8"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -298,13 +303,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // p2p: 1 day
         nTargetSpacing = 1 * 60;        // p2p: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1538246465;
+        genesis.nTime = 1543178984;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21049830;
+        genesis.nNonce = 23091664;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 48120;
-        assert(hashGenesisBlock == uint256("0x000008b785a990bc4a23c46a01cf227744229ee8d989e4834f95b3072d2235f7"));
+        assert(hashGenesisBlock == uint256("0x000005229c457f766c6e873b402d6e45d8e1130772898003947e21365b63612e"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.

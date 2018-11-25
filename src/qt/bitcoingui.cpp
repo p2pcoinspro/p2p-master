@@ -822,7 +822,7 @@ void BitcoinGUI::aboutClicked()
 // actions for links in tools
 void BitcoinGUI::webClicked()
 	{
-	    QDesktopServices::openUrl(QUrl("https://crypto.p2p-coins.pro/"));
+	    QDesktopServices::openUrl(QUrl("https://p2pcoin.network/"));
 	}
 void BitcoinGUI::PlatformClicked()
 	{
@@ -834,7 +834,7 @@ void BitcoinGUI::discordClicked()
 	}
 void BitcoinGUI::explorerClicked()
 	{
-	    QDesktopServices::openUrl(QUrl("https://explorer.p2p-coins.pro/"));
+	    QDesktopServices::openUrl(QUrl("https://explorer.p2pcoin.network/"));
 	}
 //end actions for links in tools
 
