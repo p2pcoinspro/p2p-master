@@ -56,13 +56,15 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    boost::assign::map_list_of (0, uint256("0x00000291d02cc6230a9357a6552de601c5d48a76cd49e8a65bd81ed309091983"));
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of (0, uint256("0x00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8"));
+    boost::assign::map_list_of
+    (0, uint256("0x00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8"))
+    (12488, uint256("0x41feeeefb37b2fd376db33e1348252721bbd937df41acd893f49fd1f769d85ba"));
 
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1538246463, // * UNIX timestamp of last checkpoint block
-    0,          // * total number of transactions between genesis and last checkpoint
+    1543958900, // * UNIX timestamp of last checkpoint block
+    24841,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -159,12 +161,16 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
         assert(genesis.hashMerkleRoot == uint256("0xe90e5ecc79da4653ef65a89257e26c5732cbd5aa2996399b87eb141b63ecabc4"));
 
         // DNS Seeding
+	vSeeds.push_back(CDNSSeedData("seed.p2pcoin.network", "seed.p2pcoin.network"));
         vSeeds.push_back(CDNSSeedData("46.101.191.120", "46.101.191.120"));
         vSeeds.push_back(CDNSSeedData("159.89.23.26", "159.89.23.26"));
-        vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
         vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
+        vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
         vSeeds.push_back(CDNSSeedData("159.89.30.79", "159.89.30.79"));
-        vSeeds.push_back(CDNSSeedData("85.121.197.170", "85.121.197.170"));
+        vSeeds.push_back(CDNSSeedData("46.101.101.246", "46.101.101.246"));
+        vSeeds.push_back(CDNSSeedData("188.166.165.97", "188.166.165.97"));
+        vSeeds.push_back(CDNSSeedData("69.55.62.57", "69.55.62.57"));
+        vSeeds.push_back(CDNSSeedData("69.55.62.58", "69.55.62.58"));
 
 
         // p2p addresses start with 'p'
