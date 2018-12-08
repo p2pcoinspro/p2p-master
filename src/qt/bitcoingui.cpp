@@ -834,7 +834,7 @@ void BitcoinGUI::discordClicked()
 	}
 void BitcoinGUI::explorerClicked()
 	{
-	    QDesktopServices::openUrl(QUrl("https://explorer.p2pcoin.network/"));
+	    QDesktopServices::openUrl(QUrl("http://explorer.p2pcoin.network/"));
 	}
 //end actions for links in tools
 
