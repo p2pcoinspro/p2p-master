@@ -72,6 +72,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"listunspent", 0},
         {"listunspent", 1},
         {"listunspent", 2},
+        {"listunspent", 3},
         {"getblock", 1},
         {"getblockheader", 1},
         {"gettransaction", 1},
@@ -122,7 +123,6 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getfeeinfo", 0},
         {"preparecommunityproposal", 2},
         {"submitcommunityproposal", 2},
-
     };
 
 class CRPCConvertTable

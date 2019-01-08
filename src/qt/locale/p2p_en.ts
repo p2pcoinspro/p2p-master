@@ -3659,12 +3659,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+772"/>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uSPs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uP2Ps in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uSPs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uP2Ps in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

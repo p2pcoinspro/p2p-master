@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>选择发送SP coin的地址</translation>
+        <translation>选择发送P2P coin的地址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>选择接收SP coin的地址</translation>
+        <translation>选择接收P2P coin的地址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -63,11 +63,11 @@
     </message>
     <message>
         <source>These are your P2P addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这是用于发送SP的地址。在发送SP之前，请认真核查发送金额和接收地址。</translation>
+        <translation>这是用于发送P2P的地址。在发送P2P之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
         <source>These are your P2P addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这是用于接收SP的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
+        <translation>这是用于接收P2P的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>p2p will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your P2Ps from being stolen by malware infecting your computer.</source>
-        <translation>p2p将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取SPs。</translation>
+        <translation>p2p将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取P2Ps。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR P2P&lt;/b&gt;!</source>
-        <translation>注意：请妥善保管好你的密码，因为在加密后，没有密码将无法打开钱包。这将会让您&lt;b&gt;损失钱包中所有的SP&lt;/b&gt;！</translation>
+        <translation>注意：请妥善保管好你的密码，因为在加密后，没有密码将无法打开钱包。这将会让您&lt;b&gt;损失钱包中所有的P2P&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <source>Enter a P2P Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>输入您要使用BIP 38加密的SP地址。在中间框中输入密码。按加密计算加密私钥。</translation>
+        <translation>输入您要使用BIP 38加密的P2P地址。在中间框中输入密码。按加密计算加密私钥。</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -248,7 +248,7 @@
     </message>
     <message>
         <source>The P2P address to sign the message with</source>
-        <translation>该SP地址签名的消息</translation>
+        <translation>该P2P地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -280,7 +280,7 @@
     </message>
     <message>
         <source>Sign the message to prove you own this P2P address</source>
-        <translation>签署消息以证明您拥有此SP地址</translation>
+        <translation>签署消息以证明您拥有此P2P地址</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -304,11 +304,11 @@
     </message>
     <message>
         <source>The P2P address the message was signed with</source>
-        <translation>由SP地址签名的消息</translation>
+        <translation>由P2P地址签名的消息</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified P2P address</source>
-        <translation>验证消息确保它已使用指定的SP地址进行签名</translation>
+        <translation>验证消息确保它已使用指定的P2P地址进行签名</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -603,7 +603,7 @@
     </message>
     <message>
         <source>Send coins to a P2P address</source>
-        <translation>发送数字货币到SP地址</translation>
+        <translation>发送数字货币到P2P地址</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and p2p: URIs)</source>
@@ -631,11 +631,11 @@
     </message>
     <message>
         <source>Sign messages with your P2P addresses to prove you own them</source>
-        <translation>使用您的SP地址验证消息，以证明您拥有他们</translation>
+        <translation>使用您的P2P地址验证消息，以证明您拥有他们</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified P2P addresses</source>
-        <translation>验证消息确保它已使用指定的SP地址进行签名</translation>
+        <translation>验证消息确保它已使用指定的P2P地址进行签名</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -960,7 +960,7 @@ Address: %4
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择显示发送SP的默认单位。</translation>
+        <translation>选择显示发送P2P的默认单位。</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1279,7 +1279,7 @@ Address: %4
     </message>
     <message>
         <source>The P2P address to sign the message with</source>
-        <translation>该SP地址签名的消息</translation>
+        <translation>该P2P地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1307,15 +1307,15 @@ Address: %4
     </message>
     <message>
         <source>Sign the message to prove you own this P2P address</source>
-        <translation>签署消息以证明您拥有此SP地址</translation>
+        <translation>签署消息以证明您拥有此P2P地址</translation>
     </message>
     <message>
         <source>The P2P address the message was signed with</source>
-        <translation>由SP地址签名的消息</translation>
+        <translation>由P2P地址签名的消息</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified P2P address</source>
-        <translation>验证消息确保它已使用指定的SP地址进行签名</translation>
+        <translation>验证消息确保它已使用指定的P2P地址进行签名</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>

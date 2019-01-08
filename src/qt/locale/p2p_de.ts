@@ -2604,12 +2604,12 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Coins automatisch ausgewählt</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSPs in fee,&lt;br /&gt;while "at least" pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Wenn die kundenspezifische Gebühr auf 1000 uSPs eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uSPs an Gebühr,&lt;br /&gt;während man "mindestens" 1000 uSPs bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie mit Kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uP2Ps in fee,&lt;br /&gt;while "at least" pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Wenn die kundenspezifische Gebühr auf 1000 uP2Ps eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uP2Ps an Gebühr,&lt;br /&gt;während man "mindestens" 1000 uP2Ps bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie mit Kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Wenn die kundenspezifische Gebühr auf 1000 uSPs eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uSPs an Gebühr,&lt;br /&gt;während man "insgesamt mindestens" 1000 uSPs bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie mit Kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uP2Ps in fee,&lt;br /&gt;while "total at least" pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Wenn die kundenspezifische Gebühr auf 1000 uP2Ps eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uP2Ps an Gebühr,&lt;br /&gt;während man "insgesamt mindestens" 1000 uP2Ps bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie mit Kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for p2p transactions than the network can process.</source>
@@ -3955,7 +3955,7 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
-        <translation>Dies ist für Regressionstest-Tools und Anwendungsentwicklung gep2pt.</translation>
+        <translation>Dies ist für Regressionstest-Tools und Anwendungsentwicklung gedacht.</translation>
     </message>
     <message>
         <source>This is not a Masternode.</source>

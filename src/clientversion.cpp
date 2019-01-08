@@ -13,7 +13,7 @@
  * for both p2pd and p2p-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("P2P Core");
+const std::string CLIENT_NAME("p2p Core");
 
 /**
  * Client version number
@@ -45,7 +45,7 @@ const std::string CLIENT_NAME("P2P Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
 #ifdef GIT_ARCHIVE
 #define GIT_COMMIT_ID "cbcb549"
-#define GIT_COMMIT_DATE "Sat, 30 Sep 2018 16:54:57 -0500"
+#define GIT_COMMIT_DATE "Tue, 9 Feb 2016 16:54:57 -0500"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

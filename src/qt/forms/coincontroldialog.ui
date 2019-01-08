@@ -386,9 +386,6 @@
         </item>
         <item>
          <widget class="QRadioButton" name="radioTreeMode">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -397,9 +394,6 @@
           </property>
           <property name="text">
            <string>Tree mode</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -415,7 +409,7 @@
            <string>List mode</string>
           </property>
           <property name="checked">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>

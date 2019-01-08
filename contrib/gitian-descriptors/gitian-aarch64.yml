@@ -1,5 +1,5 @@
 ---
-name: "p2p-aarch64-2.0.0"
+name: "p2p-aarch64-1.0.1.x"
 enable_cache: true
 suites:
 - "xenial"

@@ -173,7 +173,7 @@
     </message>
     <message>
         <source>p2p will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your P2Ps from being stolen by malware infecting your computer.</source>
-        <translation>p2p sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella SPien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <translation>p2p sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella P2Pien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -181,7 +181,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR P2P&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki SPisi&lt;/b&gt;</translation>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki P2Pisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>

@@ -24,9 +24,6 @@
 
 SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) : QWidget(0, f), curAlignment(0)
 {
-    // no window decorations
-    setWindowFlags(Qt::FramelessWindowHint);
-
     // set reference point, paddings
     int paddingLeft = 14;
     int paddingTop = 400;

@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>選擇要匯出SP幣的位址</translation>
+        <translation>選擇要匯出P2P幣的位址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>選擇要接收SP幣的位址</translation>
+        <translation>選擇要接收P2P幣的位址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>

@@ -21,6 +21,27 @@ Spendable Premine	50 000 P2P (~0.24%)
 Locked Premine	250 000 P2P (~1.20)
 
 For better connection add this peers
+
+addnode=46.101.112.164
+
+addnode=46.101.239.165
+
+addnode=46.101.252.79
+
+addnode=188.166.166.224
+
+addnode=46.101.240.63
+
+addnode=46.101.155.60
+
+addnode=46.101.237.194
+
+addnode=46.101.206.227
+
+addnode=46.101.181.5
+
+addnode=46.101.204.56
+
 addnode=159.89.30.79
 
 addnode=159.89.23.26

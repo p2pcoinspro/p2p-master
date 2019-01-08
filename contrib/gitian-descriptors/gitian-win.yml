@@ -1,5 +1,5 @@
 ---
-name: "p2p-win-2.0.0"
+name: "p2p-win-1.0.1.x"
 enable_cache: true
 suites:
 - "trusty"

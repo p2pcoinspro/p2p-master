@@ -983,7 +983,7 @@ MultiWysyłlka: %1</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
-        <translation>Status będzie uaktualniany automatycznie (w sekunp2p)</translation>
+        <translation>Status będzie uaktualniany automatycznie (w sekundach)</translation>
     </message>
     <message>
         <source>0</source>

@@ -26,7 +26,7 @@ Drag p2p-Qt to your applications folder, and then run p2p-Qt.
 
 ### Need Help?
 
-* Join our Discord server [Discord Server](https://discordapp.com/invite/H9MaNZv)
+* Join our Discord server [Discord Server](https://discordapp.com/invite/)
 
 Building
 ---------------------

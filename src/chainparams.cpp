@@ -58,13 +58,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("0x00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8"))
-    (12488, uint256("0x41feeeefb37b2fd376db33e1348252721bbd937df41acd893f49fd1f769d85ba"));
-
+    (12488, uint256("0x41feeeefb37b2fd376db33e1348252721bbd937df41acd893f49fd1f769d85ba"))
+	 (55573, uint256("0x0b48d6b10654251f4460d65d60ddd5cf92339dda2e6350518912a3ebaa958643"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1543958900, // * UNIX timestamp of last checkpoint block
-    24841,          // * total number of transactions between genesis and last checkpoint
+    1546893371, // * UNIX timestamp of last checkpoint block
+    111062,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -162,6 +162,16 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
 
         // DNS Seeding
 	vSeeds.push_back(CDNSSeedData("seed.p2pcoin.network", "seed.p2pcoin.network"));
+		  vSeeds.push_back(CDNSSeedData("46.101.112.164", "46.101.112.164"));
+		  vSeeds.push_back(CDNSSeedData("46.101.239.165", "46.101.239.165"));
+		  vSeeds.push_back(CDNSSeedData("46.101.252.79", "46.101.252.79"));
+		  vSeeds.push_back(CDNSSeedData("188.166.166.224", "188.166.166.224"));
+		  vSeeds.push_back(CDNSSeedData("46.101.240.63", "46.101.240.63"));
+		  vSeeds.push_back(CDNSSeedData("46.101.155.60", "46.101.155.60"));
+		  vSeeds.push_back(CDNSSeedData("46.101.237.194", "46.101.237.194"));
+		  vSeeds.push_back(CDNSSeedData("46.101.206.227", "46.101.206.227"));
+		  vSeeds.push_back(CDNSSeedData("46.101.181.5", "46.101.181.5"));
+		  vSeeds.push_back(CDNSSeedData("46.101.204.56", "46.101.204.56"));
         vSeeds.push_back(CDNSSeedData("46.101.191.120", "46.101.191.120"));
         vSeeds.push_back(CDNSSeedData("159.89.23.26", "159.89.23.26"));
         vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
@@ -314,7 +324,7 @@ public:
         genesis.nNonce = 23091664;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 48120;
+        nDefaultPort = 34516;
         assert(hashGenesisBlock == uint256("0x000005229c457f766c6e873b402d6e45d8e1130772898003947e21365b63612e"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.

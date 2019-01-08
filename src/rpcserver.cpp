@@ -360,6 +360,7 @@ static const CRPCCommand vRPCCommands[] =
         {"p2p", "checkcommunityproposals", &checkcommunityproposals, true, true, false},
         {"p2p", "getcommunityproposalvotes", &getcommunityproposalvotes, true, true, false},
         {"p2p", "mncommunityvote", &mncommunityvote, true, true, false},
+
 #ifdef ENABLE_WALLET
 
         /* Wallet */

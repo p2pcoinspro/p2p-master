@@ -1,3 +1,7 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 bin_PROGRAMS += qt/p2p-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
@@ -182,6 +186,7 @@ BITCOIN_QT_H = \
 RES_ICONS = \
   qt/res/icons/add.png \
   qt/res/icons/address-book.png \
+  qt/res/icons/address-book_black.png \
   qt/res/icons/bitcoin.ico \
   qt/res/icons/bitcoin.png \
   qt/res/icons/bitcoin_testnet.ico \
@@ -200,8 +205,10 @@ RES_ICONS = \
   qt/res/icons/connect4_16.png \
   qt/res/icons/debugwindow.png \
   qt/res/icons/edit.png \
+  qt/res/icons/edit_black.png \
   qt/res/icons/editcopy.png \
   qt/res/icons/editpaste.png \
+  qt/res/icons/editpaste_black.png \
   qt/res/icons/explorer.png \
   qt/res/icons/export.png \
   qt/res/icons/eye.png \
@@ -215,7 +222,6 @@ RES_ICONS = \
   qt/res/icons/lock_open.png \
   qt/res/icons/masternodes.png \
   qt/res/icons/masternodes_active.png \
-  qt/res/icons/open.png \
   qt/res/icons/overview.png \
   qt/res/icons/overview_active.png \
   qt/res/icons/qrcode.png \
@@ -223,24 +229,27 @@ RES_ICONS = \
   qt/res/icons/receive.png \
   qt/res/icons/receive_active.png \
   qt/res/icons/remove.png \
+  qt/res/icons/remove_black.png \
   qt/res/icons/send.png \
   qt/res/icons/send_active.png \
+  qt/res/icons/send_black.png \
   qt/res/icons/staking_active.png \
   qt/res/icons/staking_inactive.png \
   qt/res/icons/synced.png \
   qt/res/icons/transaction0.png \
   qt/res/icons/transaction2.png \
+  qt/res/icons/transaction_black.png \
   qt/res/icons/transaction_conflicted.png \
   qt/res/icons/tx_inout.png \
   qt/res/icons/tx_input.png \
-  qt/res/icons/tx_mined.png \
   qt/res/icons/tx_output.png \
-  qt/res/icons/unit_munit.png \
-  qt/res/icons/unit_tmunit.png \
-  qt/res/icons/unit_tunit.png \
-  qt/res/icons/unit_tuunit.png \
-  qt/res/icons/unit_unit.png \
-  qt/res/icons/unit_uunit.png
+  qt/res/icons/tx_mined.png \
+  qt/res/icons/unit_p2p.png \
+  qt/res/icons/unit_mp2p.png \
+  qt/res/icons/unit_up2p.png \
+  qt/res/icons/unit_tp2p.png \
+  qt/res/icons/unit_tmp2p.png \
+  qt/res/icons/unit_tup2p.png
 
 BITCOIN_QT_CPP = \
   qt/bitcoinaddressvalidator.cpp \
@@ -304,7 +313,6 @@ BITCOIN_QT_CPP += \
 endif
 
 RES_IMAGES = \
-  qt/res/images/p2p_logo.png \
   qt/res/images/p2p_logo_horizontal.png \
   qt/res/images/about.png \
   qt/res/images/splash.png \

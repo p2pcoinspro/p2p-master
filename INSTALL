@@ -2,8 +2,8 @@ Building p2p
 
 Use the autogen script to prepare the build environment.
 
-    ./autogen.sh &&\
-    ./configure &&\
+    ./autogen.sh &&/
+    ./configure &&/
     make
 
 Always verify the signatures and checksums.

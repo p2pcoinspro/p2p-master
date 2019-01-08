@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR P2P&lt;/b&gt;!</source>
-        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 SP를 잃게 됩니다&lt;/b&gt;!</translation>
+        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 P2P를 잃게 됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -984,7 +984,7 @@ Address: %4
     </message>
     <message>
         <source>Can vary +/- %1 up2p per input.</source>
-        <translation>입력당 +/- %1 usp을 변경할 수 있습니다.</translation>
+        <translation>입력당 +/- %1 up2p을 변경할 수 있습니다.</translation>
     </message>
     <message>
         <source>medium</source>
@@ -2554,12 +2554,12 @@ Please check the address and try again.</source>
         <translation>승인 시간:</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSPs in fee,&lt;br /&gt;while "at least" pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uSPs로 설정되고,&lt;br /&gt;1000 uSPs 안에는 최소 "킬로바이트당" 250 uSPs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uP2Ps in fee,&lt;br /&gt;while "at least" pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uP2Ps로 설정되고,&lt;br /&gt;1000 uP2Ps 안에는 최소 "킬로바이트당" 250 uP2Ps 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uSPs로 설정되고,&lt;br /&gt;1000 uSPs 안에는 전체에서 최소 "킬로바이트당" 250 uSPs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uP2Ps and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uP2Ps in fee,&lt;br /&gt;while "total at least" pays 1000 uP2Ps. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uP2Ps로 설정되고,&lt;br /&gt;1000 uP2Ps 안에는 전체에서 최소 "킬로바이트당" 250 uP2Ps 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for p2p transactions than the network can process.</source>
@@ -3484,7 +3484,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 P2P.</source>
-        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 SP로 제한됩니다.</translation>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 P2P로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -3738,7 +3738,7 @@ rpcpassword=%s
     </message>
     <message>
         <source>Unable to locate enough funds for this transaction that are not equal 10000 P2P.</source>
-        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 SP와 같지 않음</translation>
+        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 P2P와 같지 않음</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
