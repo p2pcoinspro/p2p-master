@@ -5,6 +5,7 @@ Shell script to install a [P2P Masternode](https://p2pcoin.network/) on a Linux 
 ## Installation
 ```
 wget -q -N https://github.com/p2pcoinspro/p2p-master/raw/master/p2p_mn_install.sh
+chmod 777 p2p_mn_install.sh
 bash p2p_mn_install.sh
 ```
 ***
