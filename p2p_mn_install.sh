@@ -36,7 +36,7 @@ function download_node() {
 
 function configure_watchdog() {
   cat << 'EOF' > /root/watch.dog
-  #!/bin/bash
+#!/bin/bash
   user=root
   daemon=p2pd
   cli_full_path=/usr/local/bin/p2p-cli
