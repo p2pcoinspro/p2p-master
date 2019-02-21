@@ -1,8 +1,8 @@
   cat << 'EOF' > /root/watch.dog
-  #!/bin/bash
-  user=root
-  daemon=p2pd
-  cli_full_path=/usr/local/bin/p2p-cli
+#!/bin/bash
+user=root
+daemon=p2pd
+cli_full_path=/usr/local/bin/p2p-cli
   functie_check_start_wallet () {
         status=`ps -ax | grep $daemon | sed '/grep/d' | wc -l`
         #echo $status
