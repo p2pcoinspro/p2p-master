@@ -3,7 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2017-2018 The Bitcoin Green developers
-// Copyright (c) 2019 The p2p developers
+// Copyright (c) 2018 The p2p developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -61,7 +61,7 @@ CCriticalSection cs_main;
 BlockMap mapBlockIndex;
 map<uint256, uint256> mapProofOfStake;
 
-//ybv//
+//ybv
 map<COutPoint, int> mapStakeSpent;
 
 set<pair<COutPoint, unsigned int> > setStakeSeen;
