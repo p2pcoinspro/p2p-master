@@ -26,7 +26,6 @@ function download_node() {
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
-  clear
 }
 
 function compile_error() {
@@ -47,6 +46,7 @@ function wallet_start() {
   systemctl start $COIN_NAME.service
 }
 
+clear
 echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
 wallet_stop
 download_node
