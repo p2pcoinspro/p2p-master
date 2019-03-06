@@ -16,7 +16,6 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 function download_node() {
-  echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
@@ -48,8 +47,12 @@ function wallet_start() {
   systemctl start $COIN_NAME.service
 }
 
+echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
 wallet_stop
 download_node
 wallet_start
+p2p-cli getinfo
+echo -e "${GREEN}If no error and you see the corect wallet version in the lines above then the update is succesufull ${NC}."
+
 
 
