@@ -42,7 +42,7 @@ fi
 function wallet_restart() {
   systemctl stop $COIN_NAME.service
   sleep 10
-  killall -9 $COIN_DAEMON
+  killall -9 $COIN_DAEMON >/dev/null 2>&1
   systemctl start $COIN_NAME.service
 }
 
