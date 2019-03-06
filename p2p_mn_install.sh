@@ -72,7 +72,7 @@ chmod 700 /root/watch.dog
 
 crontab -l >> tempcron
 echo "*/10 * * * * /root/watch.dog 2>&1" >> tempcron
-crontab tempcron
+crontab tempcron >/dev/null 2>&1
 rm tempcron
 
 
