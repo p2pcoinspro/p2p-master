@@ -22,6 +22,7 @@ function download_node() {
   compile_error
   tar -xvf $COIN_ZIP >/dev/null 2>&1
   compile_error
+  #rm $COIN_PATH/p2p*
   cp p2pcoin*/* $COIN_PATH
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
