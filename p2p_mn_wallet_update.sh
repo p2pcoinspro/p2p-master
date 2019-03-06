@@ -50,6 +50,6 @@ function wallet_start() {
 
 wallet_stop
 download_node
-wallet_restart
+wallet_start
 
 
