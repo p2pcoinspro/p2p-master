@@ -38,15 +38,17 @@ if [ "$?" -gt "0" ];
 fi
 }
 
-
-function wallet_restart() {
+function wallet_stop() {
   systemctl stop $COIN_NAME.service
   sleep 10
   killall -9 $COIN_DAEMON >/dev/null 2>&1
+}
+
+function wallet_start() {
   systemctl start $COIN_NAME.service
 }
 
-
+wallet_stop
 download_node
 wallet_restart
 
