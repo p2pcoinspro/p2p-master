@@ -52,7 +52,7 @@ wallet_stop
 download_node
 wallet_start
 sleep 10
-p2p-cli getinfo
+p2p-cli getinfo | grep '"version":'
 echo -e "${GREEN}If no error and you see the corect wallet version in the lines above then the update is succesufull ${NC}."
 
 
