@@ -1,8 +1,13 @@
 Install 10VPSx17 masternodes for free for 2 months.
+
 The script only works on DigitalOcean VPS
+
 Use this link https://m.do.co/c/184552fce5fe to make new account and you get credit of 100$ free that will help you set up 10VPSx17masternodes of p2p for 2 months.
+
 You will be asked to insert pay method.  No money will be taken until the credit you have earned will expire. 
+
 You need to destroy the VPS and the account before credit expire so no money to be taken from you. 
+
 ***
 ```
 After account creation follow this steps:
@@ -13,6 +18,7 @@ Choose a datacenter region closer to your home
 Select additional options IPv6
 Create
 ```
+```
 Check your e-mail
 You got  email with ip user pass for the vps you just created
 
@@ -21,7 +27,7 @@ A new black window will start where you need to setup the vps
 Login with the user and password you receive on e-mail
 You will be prompted to change the password so you follow the steps.
 Once done copy paste the next lines in order for you to install 17 masternode on that vps
-
+```
 ```
 wget -q -N https://github.com/p2pcoinspro/p2p-master/raw/master/p2p_17mn_install_How_to.sh
 chmod 777 p2p_17mn_install_How_to.sh
