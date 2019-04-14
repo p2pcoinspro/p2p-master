@@ -3,20 +3,20 @@ The script only works on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
 
-to make new account and you get credit of 100$ free that will help you set up 10VPSx17masternodes of p2p for 2 months.
-You will be asked to insert pay method.  No money will be taken until the credit you have earned will expire. 
-You need to destroy the VPS and the account before credit expire so no money to be taken from you. 
+to get credit of 100$ free that will help you set up 10VPSx17masternodes for p2p for 2 months.
+You will be asked to insert an payout method.  No money will be taken until the credit that you have will expire. 
+You need to destroy the VPS and the account before credit expire so no money to be debited from your account. 
 
-```
+
 After account creation follow this steps:
+```
 Create Droplets
 Choose an image -> ubuntu 16.04.6 x64
 Choose a plan -> Strandard $5 /mo vps
 Choose a datacenter region closer to your home
 Select additional options IPv6
 Create
-```
-```
+
 Check your e-mail
 You got  email with ip user pass for the vps you just created
 
