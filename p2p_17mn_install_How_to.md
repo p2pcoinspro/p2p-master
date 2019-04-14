@@ -1,13 +1,9 @@
-Install 10VPSx17 masternodes for free for 2 months.
-
+```Install 10VPSx17 masternodes for free for 2 months.
 The script only works on DigitalOcean VPS
-
 Use this link https://m.do.co/c/184552fce5fe to make new account and you get credit of 100$ free that will help you set up 10VPSx17masternodes of p2p for 2 months.
-
 You will be asked to insert pay method.  No money will be taken until the credit you have earned will expire. 
-
 You need to destroy the VPS and the account before credit expire so no money to be taken from you. 
-
+```
 ***
 ```
 After account creation follow this steps:
