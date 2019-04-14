@@ -1,4 +1,4 @@
-Install 10VPSx17 masternodes for free for 2 months.
+## Install 10VPSx17 masternodes for free for 2 months.
 The script only works on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
@@ -8,7 +8,7 @@ You will be asked to insert an payout method.  No money will be taken until the 
 You need to destroy the VPS and the account before credit expire so no money to be debited from your account. 
 
 
-After account creation follow this steps:
+## After account creation follow this steps:
 ```
 Create Droplets
 Choose an image -> ubuntu 16.04.6 x64
