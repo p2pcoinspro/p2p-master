@@ -351,7 +351,7 @@ clear
  echo -e "Then copy paste to your pc wallet. " >> p2p.commands
  echo -e "When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn" >> p2p.commands
  cat p2p.commands
- echo -e "mn01 $NODEIP:24513 $COINKEY TXID 0${NC}" >> masternode.conf
+ echo -e "mn01 $NODEIP:24513 $COINKEY_1 TXID 0${NC}" >> masternode.conf
  echo -e "mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0" >> masternode.conf
  echo -e "mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0" >> masternode.conf
  echo -e "mn04 [${NODEIPV6::-1}2]:24513 $COINKEY_4 TXID 0" >> masternode.conf
