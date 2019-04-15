@@ -41,4 +41,6 @@ and to copy paste and edit to your masternode.conf file from your pc wallet.
 
 Now you have 17 cold wallets installed that can hold 17 masternodes .  You just need to prepare the coins, send to masternode addreses and put the txid and output in masternode.conf [TXID 0] location (you need to edit the masternode.conf file). Resterat pc wallet, wait 15 confirmation then start the masternode anytime you want until you fill all the 17 cold wallets.
 
+Use ```p2pinfo``` command to see all cold wallets status
+
 Enjoy 
