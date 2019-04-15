@@ -20,7 +20,8 @@ Create
 Check your e-mail
 You got  email with ip user pass for the vps you just created
 
-Find and press Access console from the droplets options
+Use putty to login to VPS best soution or 
+Find and press Access console from the droplets options. 
 A new black window will start where you need to setup the vps
 Login with the user and password you receive on e-mail
 You will be prompted to change the password so you follow the steps.
@@ -32,7 +33,7 @@ chmod 777 p2p_17mn_install_How_to.sh
 bash p2p_17mn_install_How_to.sh
 ```
 Wait until the script end.
-
+You will need putty to make the final steps because i dod not find a way to copy the text from the digitalocean console.
 At the end of the script you will receive informations about how to monitor, start, stop and restart the cold wallets.
 You can see the same info anytime with the command : ```cat p2p.commands```
 Use the command :```cat masternode.conf```
