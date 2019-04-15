@@ -329,9 +329,8 @@ EOF
 
 function important_information() {
 clear
- echo -e "================================================================================================================================"
  echo -e "Restart: ${RED}systemctl restart $COIN_NAME[_XX].service${NC}" >> p2p.commands
- echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME[_XX].service${NC}" >> p2p.commands
+ echo -e "P2P daemon Status: ${RED}systemctl status $COIN_NAME[_XX].service${NC}" >> p2p.commands
  echo -e "Use this commands to check you installed wallets :" >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 getinfo${NC}" >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 getinfo${NC}" >> p2p.commands
@@ -344,14 +343,15 @@ clear
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}" >> p2p.commands
  echo -e "	..." >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}" >> p2p.commands
- echo -e "Use this command to see all cold wallets status ${RED}p2pinfo${NC} " >> p2p.commands
- echo -e "You can see this info later with :  cat p2p.commands" >> p2p.commands
  echo -e " " >> p2p.commands
- echo -e "We created masternode.conf file. " >> p2p.commands
- echo -e "Use command : cat masternode.conf " >> p2p.commands
+ echo -e "All cold wallets status : ${RED}p2pinfo${NC} " >> p2p.commands
+ echo -e " " >> p2p.commands
+ echo -e "You can see this info later with :  ${RED}cat p2p.commands${NC}" >> p2p.commands
+ echo -e " " >> p2p.commands
+ echo -e "masternode.conf file Created " >> p2p.commands
+ echo -e "Use command : ${RED}cat masternode.conf${NC} " >> p2p.commands
  echo -e "Then copy paste to your pc wallet. " >> p2p.commands
  echo -e "When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn" >> p2p.commands
- cat p2p.commands
  echo -e "mn01 $NODEIP:24513 $COINKEY_1 TXID 0${NC}" >> masternode.conf
  echo -e "mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0" >> masternode.conf
  echo -e "mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0" >> masternode.conf
@@ -369,6 +369,12 @@ clear
  echo -e "mn15 [${NODEIPV6::-1}d]:24513 $COINKEY_15 TXID 0" >> masternode.conf
  echo -e "mn16 [${NODEIPV6::-1}e]:24513 $COINKEY_16 TXID 0" >> masternode.conf
  echo -e "mn17 [${NODEIPV6::-1}f]:24513 $COINKEY_17 TXID 0" >> masternode.conf
+ echo -e "================================================================================================================================"
+ echo -e "${GREEN}cat masternode.conf${NC} " 
+ cat masternode.conf
+ echo -e "================================================================================================================================"
+ echo -e "${GREEN}cat p2p.commands${NC} " 
+ cat p2p.commands
  echo -e "================================================================================================================================"
 }
 
