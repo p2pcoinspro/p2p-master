@@ -344,27 +344,30 @@ clear
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}" >> p2p.commands
  echo -e "	..." >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}" >> p2p.commands
+ echo -e "You can see this info later with :  cat p2p.commands" >> p2p.commands
+ echo -e " " >> p2p.commands
+ echo -e "We created masternode.conf file. " >> p2p.commands
+ echo -e "Use command : cat masternode.conf " >> p2p.commands
+ echo -e "Then copy paste to your pc wallet. " >> p2p.commands
+ echo -e "When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn" >> p2p.commands
  cat p2p.commands
- echo -e "You can see this info later with :  cat p2p.commands"
- echo -e " "
- echo -e "We created masternode.conf file. Use command : cat masternode.conf , then copy paste to your pc wallet. When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn"
- echo -e "${GREEN}mn01 $NODEIP:24513 $COINKEY TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn04 [${NODEIPV6::-1}2]:24513 $COINKEY_4 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn05 [${NODEIPV6::-1}3]:24513 $COINKEY_5 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn06 [${NODEIPV6::-1}4]:24513 $COINKEY_6 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn07 [${NODEIPV6::-1}5]:24513 $COINKEY_7 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn08 [${NODEIPV6::-1}6]:24513 $COINKEY_8 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn09 [${NODEIPV6::-1}7]:24513 $COINKEY_9 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn10 [${NODEIPV6::-1}8]:24513 $COINKEY_10 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn11 [${NODEIPV6::-1}9]:24513 $COINKEY_11 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn12 [${NODEIPV6::-1}a]:24513 $COINKEY_12 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn13 [${NODEIPV6::-1}b]:24513 $COINKEY_13 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn14 [${NODEIPV6::-1}c]:24513 $COINKEY_14 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn15 [${NODEIPV6::-1}d]:24513 $COINKEY_15 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn16 [${NODEIPV6::-1}e]:24513 $COINKEY_16 TXID 0${NC}" >> masternode.conf
- echo -e "${GREEN}mn17 [${NODEIPV6::-1}f]:24513 $COINKEY_17 TXID 0${NC}" >> masternode.conf
+ echo -e "mn01 $NODEIP:24513 $COINKEY TXID 0${NC}" >> masternode.conf
+ echo -e "mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0" >> masternode.conf
+ echo -e "mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0" >> masternode.conf
+ echo -e "mn04 [${NODEIPV6::-1}2]:24513 $COINKEY_4 TXID 0" >> masternode.conf
+ echo -e "mn05 [${NODEIPV6::-1}3]:24513 $COINKEY_5 TXID 0" >> masternode.conf
+ echo -e "mn06 [${NODEIPV6::-1}4]:24513 $COINKEY_6 TXID 0" >> masternode.conf
+ echo -e "mn07 [${NODEIPV6::-1}5]:24513 $COINKEY_7 TXID 0" >> masternode.conf
+ echo -e "mn08 [${NODEIPV6::-1}6]:24513 $COINKEY_8 TXID 0" >> masternode.conf
+ echo -e "mn09 [${NODEIPV6::-1}7]:24513 $COINKEY_9 TXID 0" >> masternode.conf
+ echo -e "mn10 [${NODEIPV6::-1}8]:24513 $COINKEY_10 TXID 0" >> masternode.conf
+ echo -e "mn11 [${NODEIPV6::-1}9]:24513 $COINKEY_11 TXID 0" >> masternode.conf
+ echo -e "mn12 [${NODEIPV6::-1}a]:24513 $COINKEY_12 TXID 0" >> masternode.conf
+ echo -e "mn13 [${NODEIPV6::-1}b]:24513 $COINKEY_13 TXID 0" >> masternode.conf
+ echo -e "mn14 [${NODEIPV6::-1}c]:24513 $COINKEY_14 TXID 0" >> masternode.conf
+ echo -e "mn15 [${NODEIPV6::-1}d]:24513 $COINKEY_15 TXID 0" >> masternode.conf
+ echo -e "mn16 [${NODEIPV6::-1}e]:24513 $COINKEY_16 TXID 0" >> masternode.conf
+ echo -e "mn17 [${NODEIPV6::-1}f]:24513 $COINKEY_17 TXID 0" >> masternode.conf
  echo -e "================================================================================================================================"
 }
 
