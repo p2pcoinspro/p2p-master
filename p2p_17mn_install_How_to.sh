@@ -230,7 +230,7 @@ echo 'vm.vfs_cache_pressure=50' | tee -a /etc/sysctl.conf
 
 function configure_systemd() {
 clear
-echo -e "${GREEN}Installing $COIN_NAME$1 serivice.Please wait......${NC}"
+echo -e "${GREEN}Installing $COIN_NAME$1 cold wallet.Please wait......${NC}"
 cat << EOF > /etc/systemd/system/$COIN_NAME$1.service
 [Unit]
 Description=$COIN_NAME$1 service
