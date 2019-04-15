@@ -15,8 +15,8 @@ COIN_NAME='p2p'
 COIN_PORT=24513
 RPC_PORT=24514
 
-NODEIP=$(curl -s4 api.ipify.org)
-NODEIPV6=$(curl ip6.seeip.org)
+NODEIP=$(curl -s4 api.ipify.org) >/dev/null 2>&1
+NODEIPV6=$(curl ip6.seeip.org) >/dev/null 2>&1
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -42,7 +42,8 @@ fi
 
 
 function prepare_system() {
-echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} master node."
+clear
+echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} master node. Please wait ......."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
@@ -68,16 +69,16 @@ libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev build-essential libtool aut
 libboost-all-dev python-virtualenv virtualenv rpl mc htop unzip -y "
  exit 1
 fi
-clear
 }
 
 
 function download_node() {
+clear
   echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
   cd $TMP_FOLDER >/dev/null 2>&1
-  wget -q $COIN_TGZ
+  wget -q $COIN_TGZ >/dev/null 2>&1
   compile_error
-  wget -q $BLOCKCHAIN
+  wget -q $BLOCKCHAIN >/dev/null 2>&1
   compile_error
   tar -xvf $COIN_ZIP >/dev/null 2>&1
   compile_error
@@ -88,13 +89,11 @@ function download_node() {
   #rm -rf $TMP_FOLDER >/dev/null 2>&1
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
 
-
-
-  clear
 }
 
 
 function create_config() {
+clear
   mkdir $CONFIGFOLDER$1 >/dev/null 2>&1
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
@@ -115,6 +114,7 @@ cp $TMP_FOLDER/{blocks,chainstate} $CONFIGFOLDER$1 -R
 }
 
 function create_config1() {
+clear
   mkdir $CONFIGFOLDER$1 >/dev/null 2>&1
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
@@ -135,6 +135,8 @@ cp $TMP_FOLDER/{blocks,chainstate} $CONFIGFOLDER$1 -R
 }
 
 function create_key() {
+clear
+echo -e "Prepare to generate the private keys for 17 ${GREEN}$COIN_NAME${NC} master nodes. Please wait ......."
   $COIN_PATH$COIN_DAEMON -daemon -conf=/root/.p2p_1/p2p.conf -datadir=/root/.p2p_1
   sleep 30
   if [ -z "$(ps axo cmd:100 | grep $COIN_DAEMON)" ]; then
@@ -166,10 +168,11 @@ function create_key() {
   COINKEY_17=$($COIN_PATH$COIN_CLI -conf=/root/.p2p_1/p2p.conf -datadir=/root/.p2p_1 masternode genkey)
 
   $COIN_PATH$COIN_CLI -conf=/root/.p2p_1/p2p.conf -datadir=/root/.p2p_1 stop
-  clear
 }
 
 function update_config() {
+clear
+echo -e "Updating configs. Please wait ......."
   sed -i 's/daemon=1/daemon=0/' $CONFIGFOLDER$1/$CONFIG_FILE
   local COINKEY="COINKEY$1"
   cat << EOF >> $CONFIGFOLDER$1/$CONFIG_FILE
@@ -186,6 +189,7 @@ EOF
 
 
 function enable_firewall() {
+clear
   echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
@@ -196,9 +200,9 @@ function enable_firewall() {
 
 
 function get_ip() {
-NODEIP=$(curl -s4 api.ipify.org)
+NODEIP=$(curl -s4 api.ipify.org) >/dev/null 2>&1
 sleep 2
-NODEIPV6=$(curl ip6.seeip.org)
+NODEIPV6=$(curl ip6.seeip.org) >/dev/null 2>&1
 sleep 2
 }
 
@@ -212,11 +216,12 @@ fi
 }
 
 function ram() {
-
-dd if=/dev/zero of=/var/mnode_swap.img bs=1024k count=4000
+clear
+  echo -e "Setting up SWAP. Please wait ...."
+dd if=/dev/zero of=/var/mnode_swap.img bs=1024k count=4000  
 chmod 0600 /var/mnode_swap.img
-mkswap /var/mnode_swap.img
-swapon /var/mnode_swap.img
+mkswap /var/mnode_swap.img 
+swapon /var/mnode_swap.img 
 echo '/var/mnode_swap.img none swap sw 0 0' | tee -a /etc/fstab
 echo 'vm.swappiness=10' | tee -a /etc/sysctl.conf
 echo 'vm.vfs_cache_pressure=50' | tee -a /etc/sysctl.conf
@@ -224,7 +229,8 @@ echo 'vm.vfs_cache_pressure=50' | tee -a /etc/sysctl.conf
 
 
 function configure_systemd() {
-
+clear
+echo -e "${GREEN}Installing $COIN_NAME$1 serivice.Please wait......${NC}"
 cat << EOF > /etc/systemd/system/$COIN_NAME$1.service
 [Unit]
 Description=$COIN_NAME$1 service
@@ -250,17 +256,15 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-
   systemctl daemon-reload
-     echo -e "${GREEN}Installing $COIN_NAME$1 serivice.....${NC}"
   sleep 3
   systemctl start $COIN_NAME$1.service
-  systemctl enable $COIN_NAME$1.service #>/dev/null 2>&1
-  sleep 3
-  systemctl status $COIN_NAME$1.service >/dev/null 2>&1
+  systemctl enable $COIN_NAME$1.service >/dev/null 2>&1
+  #sleep 3
+  #systemctl status $COIN_NAME$1.service >/dev/null 2>&1
   sleep 10
-  $COIN_CLI -conf=$CONFIGFOLDER$1/$CONFIG_FILE -datadir=$CONFIGFOLDER$1 getinfo
-  sleep 10
+  #$COIN_CLI -conf=$CONFIGFOLDER$1/$CONFIG_FILE -datadir=$CONFIGFOLDER$1 getinfo
+  #sleep 10
   if [[ -z "$(ps axo cmd:100 | egrep $CONFIGFOLDER$1)" ]]; then
     echo -e "${RED}$COIN_NAME$1 is not running${NC}, please investigate. You should start by running the following commands as root:"
     echo -e "${GREEN}systemctl start $COIN_NAME$1.service"
@@ -272,7 +276,8 @@ EOF
 
 
 function configure_ipv6_network() {
-
+clear
+echo -e "${GREEN}Setting up IPv6.Please wait......${NC}"
 cat << EOF > /etc/network/interfaces
 
 # This file describes the network interfaces available on your system
@@ -340,24 +345,24 @@ clear
  echo -e "	..."
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}"
  echo -e " "
- echo -e "This is your masternode.conf file. Please copy paste to your pc wallet. When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn"
- echo -e "${GREEN}mn01 $NODEIP:24513 $COINKEY TXID 0${NC}"
- echo -e "${GREEN}mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0${NC}"
- echo -e "${GREEN}mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0${NC}"
- echo -e "${GREEN}mn04 [${NODEIPV6::-1}2]:24513 $COINKEY_4 TXID 0${NC}"
- echo -e "${GREEN}mn05 [${NODEIPV6::-1}3]:24513 $COINKEY_5 TXID 0${NC}"
- echo -e "${GREEN}mn06 [${NODEIPV6::-1}4]:24513 $COINKEY_6 TXID 0${NC}"
- echo -e "${GREEN}mn07 [${NODEIPV6::-1}5]:24513 $COINKEY_7 TXID 0${NC}"
- echo -e "${GREEN}mn08 [${NODEIPV6::-1}6]:24513 $COINKEY_8 TXID 0${NC}"
- echo -e "${GREEN}mn09 [${NODEIPV6::-1}7]:24513 $COINKEY_9 TXID 0${NC}"
- echo -e "${GREEN}mn10 [${NODEIPV6::-1}8]:24513 $COINKEY_10 TXID 0${NC}"
- echo -e "${GREEN}mn11 [${NODEIPV6::-1}9]:24513 $COINKEY_11 TXID 0${NC}"
- echo -e "${GREEN}mn12 [${NODEIPV6::-1}a]:24513 $COINKEY_12 TXID 0${NC}"
- echo -e "${GREEN}mn13 [${NODEIPV6::-1}b]:24513 $COINKEY_13 TXID 0${NC}"
- echo -e "${GREEN}mn14 [${NODEIPV6::-1}c]:24513 $COINKEY_14 TXID 0${NC}"
- echo -e "${GREEN}mn15 [${NODEIPV6::-1}d]:24513 $COINKEY_15 TXID 0${NC}"
- echo -e "${GREEN}mn16 [${NODEIPV6::-1}e]:24513 $COINKEY_16 TXID 0${NC}"
- echo -e "${GREEN}mn17 [${NODEIPV6::-1}f]:24513 $COINKEY_17 TXID 0${NC}"
+ echo -e "We created masternode.conf file. Use command cat masternode.conf , then copy paste to your pc wallet. When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn"
+ echo -e "${GREEN}mn01 $NODEIP:24513 $COINKEY TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn04 [${NODEIPV6::-1}2]:24513 $COINKEY_4 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn05 [${NODEIPV6::-1}3]:24513 $COINKEY_5 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn06 [${NODEIPV6::-1}4]:24513 $COINKEY_6 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn07 [${NODEIPV6::-1}5]:24513 $COINKEY_7 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn08 [${NODEIPV6::-1}6]:24513 $COINKEY_8 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn09 [${NODEIPV6::-1}7]:24513 $COINKEY_9 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn10 [${NODEIPV6::-1}8]:24513 $COINKEY_10 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn11 [${NODEIPV6::-1}9]:24513 $COINKEY_11 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn12 [${NODEIPV6::-1}a]:24513 $COINKEY_12 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn13 [${NODEIPV6::-1}b]:24513 $COINKEY_13 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn14 [${NODEIPV6::-1}c]:24513 $COINKEY_14 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn15 [${NODEIPV6::-1}d]:24513 $COINKEY_15 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn16 [${NODEIPV6::-1}e]:24513 $COINKEY_16 TXID 0${NC}" >> masternode.conf
+ echo -e "${GREEN}mn17 [${NODEIPV6::-1}f]:24513 $COINKEY_17 TXID 0${NC}" >> masternode.conf
  echo -e "================================================================================================================================"
 }
 
