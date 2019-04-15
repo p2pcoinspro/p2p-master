@@ -442,7 +442,7 @@ function setup_node() {
 }
 
 function p2pinfo() {
-cat << EOF > /usr/local/p2pinfo
+cat << EOF > /usr/local/bin/p2pinfo
 echo "" > p2pinfo
 for i in {1..17}
 do
@@ -458,7 +458,7 @@ done
 clear
 cat p2pinfo
 EOF
-chmod 777 /usr/local/p2pinfo
+chmod 777 /usr/local/bin/p2pinfo
 }
 
 
