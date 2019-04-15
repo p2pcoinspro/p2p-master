@@ -330,22 +330,24 @@ EOF
 function important_information() {
 clear
  echo -e "================================================================================================================================"
- echo -e "Restart: ${RED}systemctl restart $COIN_NAME[_XX].service${NC}"
- echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME[_XX].service${NC}"
- echo -e "Use this commands to check you installed wallets :"
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 getinfo${NC}"
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 getinfo${NC}"
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 getinfo${NC}"
- echo -e "	..."
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 getinfo${NC}"
+ echo -e "Restart: ${RED}systemctl restart $COIN_NAME[_XX].service${NC}" >> p2p.commands
+ echo -e "Please check ${RED}$COIN_NAME${NC} daemon is running with the following command: ${RED}systemctl status $COIN_NAME[_XX].service${NC}" >> p2p.commands
+ echo -e "Use this commands to check you installed wallets :" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 getinfo${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 getinfo${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 getinfo${NC}" >> p2p.commands
+ echo -e "	..." >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 getinfo${NC}" >> p2p.commands
+ echo -e " " >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 masternode status${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 masternode status${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}" >> p2p.commands
+ echo -e "	..." >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}" >> p2p.commands
+ cat p2p.commands
+ echo -e "You can see this info later with :  cat p2p.commands"
  echo -e " "
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 masternode status${NC}"
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 masternode status${NC}"
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}"
- echo -e "	..."
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}"
- echo -e " "
- echo -e "We created masternode.conf file. Use command cat masternode.conf , then copy paste to your pc wallet. When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn"
+ echo -e "We created masternode.conf file. Use command : cat masternode.conf , then copy paste to your pc wallet. When you want to start a new masternode just edit the [TXID 0] section then restart the wallet, wait 15 confirmation and start mn"
  echo -e "${GREEN}mn01 $NODEIP:24513 $COINKEY TXID 0${NC}" >> masternode.conf
  echo -e "${GREEN}mn02 [${NODEIPV6::-1}0]:24513 $COINKEY_2 TXID 0${NC}" >> masternode.conf
  echo -e "${GREEN}mn03 [${NODEIPV6::-1}1]:24513 $COINKEY_3 TXID 0${NC}" >> masternode.conf
