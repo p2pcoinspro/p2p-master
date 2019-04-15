@@ -1,5 +1,5 @@
 ## Install VPSx17 masternodes for free for 2 months.Up to 10 VPSx5$ one by one you can with 100$ to last 2 months
-The script only works on DigitalOcean VPS.
+The script only tested to work on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
 
