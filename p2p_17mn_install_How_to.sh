@@ -252,11 +252,12 @@ WantedBy=multi-user.target
 EOF
 
   systemctl daemon-reload
+     echo -e "${GREEN}Installing $COIN_NAME$1 serivice.....${NC}"
   sleep 3
   systemctl start $COIN_NAME$1.service
   systemctl enable $COIN_NAME$1.service #>/dev/null 2>&1
   sleep 3
-  systemctl status $COIN_NAME$1.service
+  systemctl status $COIN_NAME$1.service >/dev/null 2>&1
   sleep 10
   $COIN_CLI -conf=$CONFIGFOLDER$1/$CONFIG_FILE -datadir=$CONFIGFOLDER$1 getinfo
   sleep 10
