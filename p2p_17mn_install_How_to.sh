@@ -446,22 +446,17 @@ cat << EOF > /usr/local/p2pinfo
 echo "" > p2pinfo
 for i in {1..17}
 do
-  INFO=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i getinfo | grep -e '"version":' -e '"blocks":' -e '"connections":' | tr -d '\n' |tr -d ' '`               
-  MASTERNODE=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i masternode status | grep status | tr -d '\n' |tr -d ' ,'| sed 's/"status"://g'` > /dev/null 2>&1
-
+  INFO=\`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i getinfo | grep -e '"version":' -e '"blocks":' -e '"connections":' | tr -d '\n' |tr -d ' '\`               
+  MASTERNODE=\`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i masternode status | grep status | tr -d '\n' |tr -d ' ,'| sed 's/"status"://g'\` > /dev/null 2>&1
   if [ "$MASTERNODE" == "4" ] ;then
     mnstatus="Masternode successfully started"
   else
     mnstatus="Masternode NOT started"
   fi
-
   echo "mn$i    $INFO   $mnstatus" >> p2pinfo
-
 done
-
 clear
 cat p2pinfo
-
 EOF
 chmod 777 /usr/local/p2pinfo
 }
