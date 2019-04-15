@@ -442,24 +442,27 @@ function setup_node() {
 }
 
 function p2pinfo() {
-cat << EOF > /usr/local/bin/p2pinfo
-echo "" > p2pinfo
-for i in {1..17}
-do
-  INFO=\`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i getinfo | grep -e '"version":' -e '"blocks":' -e '"connections":' | tr -d '\n' |tr -d ' '\`               
-  MASTERNODE=\`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i masternode status | grep status | tr -d '\n' |tr -d ' ,'| sed 's/"status"://g'\` > /dev/null 2>&1
-  if [ "$MASTERNODE" == "4" ] ;then
-    mnstatus="Masternode successfully started"
-  else
-    mnstatus="Masternode NOT started"
-  fi
-  echo "mn$i    $INFO   $mnstatus" >> p2pinfo
-done
-clear
-cat p2pinfo
-EOF
+
+echo '!#/bin/bash' > /usr/local/bin/p2pinfo
+echo 'echo "" > p2pinfo' >> /usr/local/bin/p2pinfo
+echo 'for i in {1..17}' >> /usr/local/bin/p2pinfo
+echo 'do' >> /usr/local/bin/p2pinfo
+echo '  INFO=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i getinfo | grep -e \""version" -e "blocks" -e "connections" | tr -d "\n" |tr -d " "` ' >> /usr/local/bin/p2pinfo
+echo '  MASTERNODE=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i masternode status | grep status | tr -d "\n" |tr -d " ,"| sed "s/\"status\"://"` ' >> /usr/local/bin/p2pinfo
+echo '  if [ "$MASTERNODE" == "4" ] ;then' >> /usr/local/bin/p2pinfo
+echo '    mnstatus="Masternode successfully started"' >> /usr/local/bin/p2pinfo
+echo '  else' >> /usr/local/bin/p2pinfo
+echo '    mnstatus="Masternode NOT started"' >> /usr/local/bin/p2pinfo
+echo '  fi' >> /usr/local/bin/p2pinfo
+echo '  echo "mn$i    $INFO   $mnstatus" >> p2pinfo' >> /usr/local/bin/p2pinfo
+echo 'done' >> /usr/local/bin/p2pinfo
+echo 'clear' >> /usr/local/bin/p2pinfo
+echo 'cat p2pinfo' >> /usr/local/bin/p2pinfo
+
 chmod 777 /usr/local/bin/p2pinfo
 }
+
+
 
 
 ##### Main #####
