@@ -344,6 +344,7 @@ clear
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}" >> p2p.commands
  echo -e "	..." >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_17 masternode status${NC}" >> p2p.commands
+ echo -e "Use this command to see all cold wallets status ${RED}p2pinfo${NC} " >> p2p.commands
  echo -e "You can see this info later with :  cat p2p.commands" >> p2p.commands
  echo -e " " >> p2p.commands
  echo -e "We created masternode.conf file. " >> p2p.commands
