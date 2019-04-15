@@ -34,8 +34,9 @@ bash p2p_17mn_install_How_to.sh
 Wait until the script end.
 
 At the end of the script you will receive informations about how to monitor, start, stop and restart the cold wallets.
-The last 17 lines are masternode.conf lines that you need to copy paste and edit in your masternode.conf file from your pc wallet. 
-Please  copy all the info so you can access it when you need it.
+You can see the same info anytime with the command : ```cat p2p.commands```
+Use the command :```cat masternode.conf```
+and to copy paste and edit to your masternode.conf file from your pc wallet. 
 
 Now you have 17 cold wallets installed that can hold 17 masternodes .  You just need to prepare the coins, send to masternode addreses and put the txid and output in masternode.conf [TXID 0] location (you need to edit the masternode.conf file). Resterat pc wallet, wait 15 confirmation then start the masternode.
 
