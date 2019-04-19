@@ -20,7 +20,7 @@ Create
 Check your e-mail
 You got  email with ip user pass for the vps you just created
 
-Use putty to login to VPS best soution or 
+Use putty (https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe) to login to VPS (best soution) or 
 Find and press Access console from the droplets options. 
 A new black window will start where you need to setup the vps
 Login with the user and password you received on e-mail
