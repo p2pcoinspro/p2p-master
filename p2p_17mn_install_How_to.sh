@@ -1,6 +1,7 @@
 #!/bin/bash
 #by ybv
 clear
+echo "Installing ... Sit back for about 8 minutes"
 echo "Updating system to allow script instalation. Please wait ..."
 apt-get update >/dev/null 2>&1
 apt-get install gcc -y >/dev/null 2>&1
