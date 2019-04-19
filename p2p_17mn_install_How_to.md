@@ -28,9 +28,9 @@ You will be prompted to change the password so you follow the steps.
 Once done copy paste the next lines in order for you to install 17 masternode on that vps
 ```
 ```
-wget -q -N https://github.com/p2pcoinspro/p2p-master/raw/master/p2p_17mn_install_How_to.sh.x
-chmod 777 p2p_17mn_install_How_to.sh.x
-bash p2p_17mn_install_How_to.sh.x
+wget -q -N https://raw.githubusercontent.com/p2pcoinspro/p2p-master/master/p2p_17mn_install_How_to.sh
+chmod 777 p2p_17mn_install_How_to.sh
+bash p2p_17mn_install_How_to.sh
 ```
 Wait until the script end.
 You will need putty to make the final steps because i did not find a way to copy the text from the digitalocean console.
