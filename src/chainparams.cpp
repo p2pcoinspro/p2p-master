@@ -172,15 +172,12 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
         vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
         vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
         vSeeds.push_back(CDNSSeedData("159.89.30.79", "159.89.30.79"));
-        vSeeds.push_back(CDNSSeedData("188.166.165.97", "188.166.165.97"));
-        vSeeds.push_back(CDNSSeedData("69.55.62.57", "69.55.62.57"));
-        vSeeds.push_back(CDNSSeedData("69.55.62.58", "69.55.62.58"));
-	vSeeds.push_back(CDNSSeedData("207.154.253.253", "207.154.253.253"));
-	vSeeds.push_back(CDNSSeedData("138.197.176.239", "138.197.176.239"));
-	vSeeds.push_back(CDNSSeedData("138.197.176.248", "138.197.176.248"));
-	vSeeds.push_back(CDNSSeedData("138.197.191.78", "138.197.191.78"));
-	vSeeds.push_back(CDNSSeedData("46.101.112.11", "46.101.112.11"));
-	vSeeds.push_back(CDNSSeedData("165.227.151.235", "165.227.151.235"));
+        vSeeds.push_back(CDNSSeedData("157.230.109.6", "157.230.109.6"));
+	vSeeds.push_back(CDNSSeedData("157.230.17.100", "157.230.17.100"));
+	vSeeds.push_back(CDNSSeedData("157.230.109.102", "157.230.109.102"));
+	vSeeds.push_back(CDNSSeedData("157.230.31.173", "157.230.31.173"));
+	vSeeds.push_back(CDNSSeedData("157.230.109.98", "157.230.109.98"));
+	vSeeds.push_back(CDNSSeedData("104.248.240.230", "104.248.240.230"));
 
 
         // p2p addresses start with 'p'
