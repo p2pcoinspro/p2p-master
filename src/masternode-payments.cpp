@@ -557,8 +557,16 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
         bool found = false;
         BOOST_FOREACH (CTxOut out, txNew.vout) {
             if (payee.scriptPubKey == out.scriptPubKey) {
-                if(out.nValue >= requiredMasternodePayment)
+                if (nBlockHeight <= 225000 && out.nValue <= requiredMasternodePayment) {
                     found = true;
+					if (fDebug)
+                        LogPrintf("Masternode payment was made successfully. Paid=%s Max=%s Blocks=%s Reward=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str(), nBlockHeight, FormatMoney(nReward).c_str());
+                }
+                else if(nBlockHeight > 225000 && out.nValue >= requiredMasternodePayment) {
+                    found = true;
+					if (fDebug)
+                        LogPrintf("Masternode payment was made successfully. Paid=%s Min=%s Blocks=%s Reward=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str(), nBlockHeight, FormatMoney(nReward).c_str());
+                }
                 else
                     LogPrint("masternode","Masternode payment is out of drift range. Paid=%s Min=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str());
             }
