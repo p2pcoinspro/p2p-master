@@ -1,6 +1,6 @@
 #!/bin/bash
 #by ybv
-COIN_TGZ='https://github.com/p2pcoinspro/p2p-master/releases/download/v1.0.1.5/p2pcoin-v1.0.1.5-linux-x32x64.tar.xz'
+COIN_TGZ='https://github.com/p2pcoinspro/p2p-master/releases/download/v1.0.1.7/p2pcoin-v1.0.1.7-linux-x32x64.tar.xz'
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='p2p.conf'
@@ -294,6 +294,6 @@ checks
 prepare_system
 download_node
 setup_node
-configure_watchdog
+#configure_watchdog
 
 
