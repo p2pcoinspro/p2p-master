@@ -87,7 +87,7 @@ sleep 10
 #p2pinfo
 echo -e "${GREEN}If no error then the update is succesufull ${NC}."
 echo -e "${GREEN}Use p2pinfo command to see the status off all. If p2pinfo does  not work then you need to destroy droplet and create another with the new mn17 script installer. ${NC}."
-rm p2p_17mn_install_How_to.sh
+rm p2p_17mn_install_How_to.sh  >/dev/null 2>&1
 
 
 
