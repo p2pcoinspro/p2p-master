@@ -58,7 +58,7 @@ function wallet_stop() {
   killall -9 $COIN_DAEMON >/dev/null 2>&1
 }
 
-function wallet_restart() {
+function wallet_start() {
   systemctl start ${COIN_NAME}_1.service
   systemctl start ${COIN_NAME}_2.service
   systemctl start ${COIN_NAME}_3.service
