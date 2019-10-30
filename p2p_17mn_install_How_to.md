@@ -3,7 +3,7 @@ The script only tested to work on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
 
-to get credit of 100$ free that will help you set up 10VPSx17masternodes for p2p for 2 months.
+to get free credit that will help you set up 10VPSx17masternodes for p2p for 1 month.
 You will be asked to insert an payout method.  No money will be taken until the credit that you have will expire. 
 You need to destroy the VPS and the account before credit expire so no money to be debited from your account. 
 
@@ -20,8 +20,7 @@ Create
 Check your e-mail
 You got  email with ip user pass for the vps you just created
 
-Use putty (https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe) to login to VPS (best soution) or 
-Find and press Access console from the droplets options. 
+Use putty (https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe) to login to VPS .
 A new black window will start where you need to setup the vps
 Login with the user and password you received on e-mail
 You will be prompted to change the password so you follow the steps.

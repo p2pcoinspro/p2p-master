@@ -1,6 +1,8 @@
 #!/bin/bash
 #by ybv
-COIN_TGZ='https://github.com/p2pcoinspro/p2p-master/releases/download/v1.0.1.7/p2pcoin-v1.0.1.7-linux-x32x64.tar.xz'
+COIN_TGZ=`curl https://raw.githubusercontent.com/p2pcoinspro/p2p-master/master/p2pdwlink`
+BLOCKCHAIN=`curl https://raw.githubusercontent.com/p2pcoinspro/p2p-master/master/p2plastblockchain`
+BLOCKCHAIN_ZIP=$(echo $BLOCKCHAIN | awk -F'/' '{print $NF}')
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='p2p.conf'
@@ -27,7 +29,14 @@ function download_node() {
   compile_error
   tar -xvf $COIN_ZIP >/dev/null 2>&1
   compile_error
+  wget -q $BLOCKCHAIN >/dev/null 2>&1
+  compile_error
+  tar -xvf $BLOCKCHAIN_ZIP >/dev/null 2>&1
+  compile_error
+	
   cp p2pcoin*/* $COIN_PATH
+  cp -r blocks $CONFIGFOLDER/
+  cp -r chainstate $CONFIGFOLDER/
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI

@@ -172,13 +172,6 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
         vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
         vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
         vSeeds.push_back(CDNSSeedData("159.89.30.79", "159.89.30.79"));
-        vSeeds.push_back(CDNSSeedData("157.230.109.6", "157.230.109.6"));
-	vSeeds.push_back(CDNSSeedData("157.230.17.100", "157.230.17.100"));
-	vSeeds.push_back(CDNSSeedData("157.230.109.102", "157.230.109.102"));
-	vSeeds.push_back(CDNSSeedData("157.230.31.173", "157.230.31.173"));
-	vSeeds.push_back(CDNSSeedData("157.230.109.98", "157.230.109.98"));
-	vSeeds.push_back(CDNSSeedData("104.248.240.230", "104.248.240.230"));
-
 
         // p2p addresses start with 'p'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 55);
@@ -206,7 +199,7 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
 
         nPoolMaxTransactions = 3;
         strSporkKey = "046a5e5b5065088ddc18dff9bb8bdfc1888c39b766198af468b9fadd104cc021744bba2863195575fa03c3499f90eea20f83d50a35be7afb6f0c6ba1138de4b640";
-        strMasternodePoolDummyAddress = "VWRSmn8QshzHJcKEbnoDf65DwgD3xStMtJ";
+        strMasternodePoolDummyAddress = "PGxQXRfmvRNrhVhZQ2YCYjkdohBWVmvuXt";
         nStartMasternodePayments = genesis.nTime + 14400; // 3 hours after genesis creation
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
@@ -281,7 +274,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "045e78985673c92bab40b2197a5a8d8cc32c0f3ebbd28d50696235b66d1b30a7949e0603058b465d66e07c6450ddad596fdaf2e3bfc46806c0fa66d94bc9150c1c";
-        strMasternodePoolDummyAddress = "VWRSmn8QshzHJcKEbnoDf65DwgD3xStMtJ";
+        strMasternodePoolDummyAddress = "PGxQXRfmvRNrhVhZQ2YCYjkdohBWVmvuXt";
         nStartMasternodePayments = genesis.nTime + 14400; // 4 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet

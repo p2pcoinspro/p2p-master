@@ -3131,6 +3131,8 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
     return true;
 }
 
+ #define STAKE_MIN_CONF 10
+
 bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig)
 {
     // These are checks that are independent of context.
@@ -3193,6 +3195,30 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         for (unsigned int i = 2; i < block.vtx.size(); i++)
             if (block.vtx[i].IsCoinStake())
                 return state.DoS(100, error("CheckBlock() : more than one coinstake"));
+                
+        //additional check against false PoS attack
+		// Check for coin age.
+		// First try finding the previous transaction in database.
+		CTransaction txPrev;
+		uint256 hashBlockPrev;
+		if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
+			return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
+		// Find block in map.
+		CBlockIndex* pindex = NULL;
+		BlockMap::iterator it = mapBlockIndex.find(hashBlockPrev);
+		if (it != mapBlockIndex.end())
+			pindex = it->second;
+		else
+			return state.DoS(100, error("CheckBlock() :  stake failed to find block index"));
+		// Check block time vs stake age requirement.
+		if (pindex->GetBlockHeader().nTime + nStakeMinAge > GetAdjustedTime())
+			return state.DoS(100, error("CheckBlock() : stake under min. stake age"));
+
+		// Check that the prev. stake block has required confirmations by height.
+		LogPrintf("CheckBlock() : height=%d stake_tx_height=%d required_confirmations=%d got=%d\n", chainActive.Tip()->nHeight, pindex->nHeight, STAKE_MIN_CONF, chainActive.Tip()->nHeight - pindex->nHeight);
+		if (chainActive.Tip()->nHeight - pindex->nHeight < STAKE_MIN_CONF)
+			return state.DoS(100, error("CheckBlock() : stake under min. required confirmations"));
+		
     }
 
     // ----------- swiftTX transaction scanning -----------
@@ -5384,17 +5410,17 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 int ActiveProtocol()
 {
 
-    // SPORK_14 was used for 70920. Nodes < 70920 don't see it and still get their protocol version
+    // SPORK_14 was used for 70923. Nodes < 70923 don't see it and still get their protocol version
 
-    // if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+           return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
 
     // SPORK_15 is used for 70921. Nodes < 70921 don't see it and still get their protocol version via SPORK_14 and their
     // own ModifierUpgradeBlock()
 
-    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    // if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
             
     return MIN_PEER_PROTO_VERSION;
 }

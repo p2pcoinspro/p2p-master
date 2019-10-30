@@ -1,4 +1,4 @@
-COIN_TGZ='https://github.com/p2pcoinspro/p2p-master/releases/download/v1.0.1.7/p2pcoin-v1.0.1.7-linux-x32x64.tar.xz'
+COIN_TGZ=`curl https://raw.githubusercontent.com/p2pcoinspro/p2p-master/master/p2pdwlink`
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='p2p.conf'
