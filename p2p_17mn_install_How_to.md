@@ -1,11 +1,11 @@
-## Install VPSx17 masternodes for free for 2 months.Up to 10 VPSx5$ one by one you can with 100$ to last 2 months
+## Install VPSx17 masternodes for free for 1 month.Up to 10 VPSx5$ one by one you can be built with 50$ to last 1 month
 The script only tested to work on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
 
-to get free credit that will help you set up 10VPSx17masternodes for p2p for 1 month.
-You will be asked to insert an payout method.  No money will be taken until the credit that you have will expire. 
-You need to destroy the VPS and the account before credit expire so no money to be debited from your account. 
+To get free credit that will help you set up 10VPSx17masternodes for p2p for 1 month.
+You will be asked to insert an payout method.  No money will be taken until the 50$ bonus credit that you have will expire. 
+You need to destroy the VPS and the account before credit expire and no money will be debited from your account. 
 
 
 ## After account creation follow this steps:
