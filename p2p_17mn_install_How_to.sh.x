@@ -278,6 +278,7 @@ EOF
 
 function configure_ipv6_network() {
 clear
+get_ip
 echo -e "${GREEN}Setting up IPv6.Please wait......${NC}"
 cat << EOF > /etc/network/interfaces
 
@@ -337,13 +338,13 @@ clear
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 getinfo${NC}" >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 getinfo${NC}" >> p2p.commands
  echo -e "	..." >> p2p.commands
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_15 getinfo${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_15/$CONFIG_FILE -datadir=${CONFIGFOLDER}_15 getinfo${NC}" >> p2p.commands
  echo -e " " >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_1/$CONFIG_FILE -datadir=${CONFIGFOLDER}_1 masternode status${NC}" >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_2/$CONFIG_FILE -datadir=${CONFIGFOLDER}_2 masternode status${NC}" >> p2p.commands
  echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_3/$CONFIG_FILE -datadir=${CONFIGFOLDER}_3 masternode status${NC}" >> p2p.commands
  echo -e "	..." >> p2p.commands
- echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_17/$CONFIG_FILE -datadir=${CONFIGFOLDER}_15 masternode status${NC}" >> p2p.commands
+ echo -e "	${RED}$COIN_CLI -conf=${CONFIGFOLDER}_15/$CONFIG_FILE -datadir=${CONFIGFOLDER}_15 masternode status${NC}" >> p2p.commands
  echo -e " " >> p2p.commands
  echo -e "All cold wallets status : ${RED}p2pinfo${NC} " >> p2p.commands
  echo -e " " >> p2p.commands
@@ -446,7 +447,7 @@ function p2pinfo() {
 
 echo '#!/bin/bash' > /usr/local/bin/p2pinfo
 echo 'echo "" > p2pinfo' >> /usr/local/bin/p2pinfo
-echo 'for i in {1..17}' >> /usr/local/bin/p2pinfo
+echo 'for i in {1..15}' >> /usr/local/bin/p2pinfo
 echo 'do' >> /usr/local/bin/p2pinfo
 echo '  INFO=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i getinfo | grep -e \""version" -e "blocks" -e "connections" | tr -d "\n" |tr -d " "` ' >> /usr/local/bin/p2pinfo
 echo '  MASTERNODE=`p2p-cli -conf=/root/.p2p_$i/p2p.conf -datadir=/root/.p2p_$i masternode status | grep status | tr -d "\n" |tr -d " ,"| sed "s/\"status\"://"` ' >> /usr/local/bin/p2pinfo
