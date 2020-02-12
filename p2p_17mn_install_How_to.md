@@ -1,4 +1,4 @@
-## Install VPSx17 masternodes for free for 1 month.Up to 10 VPSx5$ one by one you can be built with 50$ to last 1 month
+## Install VPSx15 masternodes for free for 1 month.Up to 10 VPSx5$ one by one you can be built with 50$ to last 1 month
 The script only tested to work on DigitalOcean VPS.
 
 ```Use this link https://m.do.co/c/184552fce5fe ```
@@ -38,7 +38,7 @@ You can see the same info anytime with the command : ```cat p2p.commands```
 Use the command :```cat masternode.conf```
 and to copy paste and edit to your masternode.conf file from your pc wallet. 
 
-Now you have 17 cold wallets installed that can hold 17 masternodes .  You just need to prepare the coins, send to masternode addreses and put the txid and output in masternode.conf [TXID 0] location (you need to edit the masternode.conf file). Resterat pc wallet, wait 15 confirmation then start the masternode anytime you want until you fill all the 17 cold wallets.
+Now you have 15 cold wallets installed that can hold 15 masternodes .  You just need to prepare the coins, send to masternode addreses and put the txid and output in masternode.conf [TXID 0] location (you need to edit the masternode.conf file). Resterat pc wallet, wait 15 confirmation then start the masternode anytime you want until you fill all the 15 cold wallets.
 
 Use ```p2pinfo``` command to see all cold wallets status
 
