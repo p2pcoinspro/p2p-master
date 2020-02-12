@@ -74,8 +74,8 @@ function wallet_start() {
   systemctl start ${COIN_NAME}_13.service
   systemctl start ${COIN_NAME}_14.service
   systemctl start ${COIN_NAME}_15.service
-  systemctl start ${COIN_NAME}_16.service
-  systemctl start ${COIN_NAME}_17.service
+  #systemctl start ${COIN_NAME}_16.service
+  #systemctl start ${COIN_NAME}_17.service
 }
 
 clear
