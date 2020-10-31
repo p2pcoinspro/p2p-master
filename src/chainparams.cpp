@@ -60,12 +60,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("0x00000b684592eca69dd056de0b68509587bbef1f5b5189144b1ad408f4af2fe8"))
     (12488, uint256("0x41feeeefb37b2fd376db33e1348252721bbd937df41acd893f49fd1f769d85ba"))
     (55573, uint256("0x0b48d6b10654251f4460d65d60ddd5cf92339dda2e6350518912a3ebaa958643"))
-    (137453, uint256("0xca6d7be5a11aec01c215d2f75f4a3adf1b63a616b61a9b31730a67594dbdb00d"));
+    (137453, uint256("0xca6d7be5a11aec01c215d2f75f4a3adf1b63a616b61a9b31730a67594dbdb00d"))
+    (1007480, uint256("0x38e9459e2c621615ff2f7dbd810df307b94a7bd4645dab9ea2bdc47006326cd5"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1551862308, // * UNIX timestamp of last checkpoint block
-    280869,          // * total number of transactions between genesis and last checkpoint
+    1604159932, // * UNIX timestamp of last checkpoint block
+    2065545,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -165,13 +166,14 @@ genesis_hash: 00000735239480d9fad9154a1933fe49f84cb960cf228d17a94ac1e2f86f828c
 	vSeeds.push_back(CDNSSeedData("seed1.p2pcoin.network", "seed1.p2pcoin.network"));
 	vSeeds.push_back(CDNSSeedData("seed2.p2pcoin.network", "seed2.p2pcoin.network"));
 	vSeeds.push_back(CDNSSeedData("seed3.p2pcoin.network", "seed3.p2pcoin.network"));
-	vSeeds.push_back(CDNSSeedData("seed4.p2pcoin.network", "seed4.p2pcoin.network"));
-	vSeeds.push_back(CDNSSeedData("seed5.p2pcoin.network", "seed5.p2pcoin.network"));
-        vSeeds.push_back(CDNSSeedData("46.101.191.120", "46.101.191.120"));
-        vSeeds.push_back(CDNSSeedData("159.89.23.26", "159.89.23.26"));
-        vSeeds.push_back(CDNSSeedData("159.89.23.27", "159.89.23.27"));
-        vSeeds.push_back(CDNSSeedData("159.65.127.168", "159.65.127.168"));
-        vSeeds.push_back(CDNSSeedData("159.89.30.79", "159.89.30.79"));
+        vSeeds.push_back(CDNSSeedData("85.121.192.1", "85.121.192.1"));
+        vSeeds.push_back(CDNSSeedData("85.121.192.2", "85.121.192.2"));
+        vSeeds.push_back(CDNSSeedData("85.121.192.3", "85.121.192.3"));
+        vSeeds.push_back(CDNSSeedData("85.121.197.26", "85.121.197.26"));
+        vSeeds.push_back(CDNSSeedData("85.121.197.27", "85.121.197.27"));
+	vSeeds.push_back(CDNSSeedData("85.121.197.28", "85.121.197.28"));
+	vSeeds.push_back(CDNSSeedData("85.121.197.29", "85.121.197.29"));
+	vSeeds.push_back(CDNSSeedData("85.121.197.30", "85.121.197.30"));
 
         // p2p addresses start with 'p'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 55);
